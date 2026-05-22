@@ -10,4 +10,22 @@ Internamente, **una tabla&#x20;**_**hash**_**&#x20;es un array cuyos elementos d
 
 En el caso de existir **colisiones de claves** (dos claves distintas reciben el mismo identificador de cubeta), existen diferentes métodos de resolución. En las sesiones de teoría se han tratado los métodos de encadenamiento y de direccionamiento directo. En el primer caso, las entradas se almacenan secuencialmente en una lista dinámica dentro de la cubeta correspondiente, mientras que en el segundo, las entradas se reubican aplicando una nueva función _hash_ dependiente del número de colisiones previas. **En esta práctica implementaremos el método de encadenamiento para resolver colisiones.**
 
-<figure><img src="../.gitbook/assets/https___content.gitbook.com_content_UNn7pHmS3yDRrKDzSzAC_blobs_PlqgVUtgp2fsPf2Ayqim_image%20(3).avif" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/https___content.gitbook.com_content_UNn7pHmS3yDRrKDzSzAC_blobs_PlqgVUtgp2fsPf2Ayqim_image%20(3).avif" alt=""><figcaption><p>Tabla hash con encadenamiento</p></figcaption></figure>
+
+```mermaid
+classDiagram
+
+class Dict {
+    <<interface>>
+}
+
+class TableEntry
+
+class ListLinked~TableEntry~
+
+class HashTable
+
+Dict <|.. HashTable : implements
+HashTable --> ListLinked~TableEntry~ : has-a
+ListLinked~TableEntry~ --> TableEntry : contains
+```
