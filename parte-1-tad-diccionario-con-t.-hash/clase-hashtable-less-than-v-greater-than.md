@@ -31,7 +31,7 @@ En particular, debes ser consciente de que la operación de buscar una entrada c
 
 ## Declaración e implementación de la clase HashTable\<V>
 
-Desde nuestro directorio de trabajo (`PRA_2425_P3`, raíz del repositorio git), abre Vim para crear el fichero `HashTable.h` que contendrá tanto la definición como la implementación de la clase `HashTable<V>`.
+Desde nuestro directorio de trabajo (raíz del repositorio git), abre Vim para crear el fichero `HashTable.h` que contendrá tanto la definición como la implementación de la clase `HashTable<V>`.
 
 ```bash
 vim HashTable.h
@@ -48,7 +48,7 @@ Escribe en él la declaración de la clase genérica `HashTable<V>`, de acuerdo 
 #include "Dict.h"
 #include "TableEntry.h"
 
-#include "../PRA_2425_P1/ListLinked.h"  // ¡¡¡¡MODIFICAR!!!!
+#include "../PRA_2627_P1/ListLinked.h"  // ¡ADAPTA A TU RUTA!
 
 template <typename V>
 class HashTable: public Dict<V> {
@@ -88,7 +88,7 @@ git commit -m "Añadida implementación de la clase HashTable"
 
 &#x20;Guarda en nuestro directorio de trabajo (`PRA_2425_P3`) el siguiente fichero para test:
 
-{% file src="/broken/files/lRU8rQRrEUZKxXNLGQl2" %}
+{% file src="../.gitbook/assets/testHashTable.cpp" %}
 
 Examina su contenido. Verás que realiza una serie de operaciones en un Diccionario con valores enteros (el tipo `int` es paramétrico), a fin de testear las diferentes operaciones que nos brinda esta implementación.&#x20;
 
@@ -104,9 +104,7 @@ vim Makefile
 make bin/testHashTable
 ```
 
-***
-
-Finalmente, ejecuta el programa de test, para comprobar que tu implementación es correcta. Estando en el directorio raíz del proyecto (`PRA_2425_P3`):
+Finalmente, ejecuta el programa de test, para comprobar que tu implementación es correcta. Estando en el directorio raíz del proyecto:
 
 ```bash
 ./bin/testHashTable
@@ -209,7 +207,7 @@ dict.remove('Ten') => throwed std::runtime_error: Key 'Ten' not found!
 
 </details>
 
-&#x20;Si la semántica de tu salida es diferente, revisa tu código.&#x20;
+&#x20;Si tu salida es diferente, revisa tu código.&#x20;
 
 {% hint style="danger" %}
 Si detectas que en tu implementación los pares clave->valor no se guardan en las mismas cubetas que en la salida esperada, revisa la función hash `h(std::string key)`.
@@ -223,8 +221,6 @@ Si la ejecución del programa se queda "colgada", seguramente sea porque ha entr
 Puedes modificar el código de test para crear una tabla _hash_ mayor y añadir más pares para comprobar el rendimiento de la función _hash_.&#x20;
 {% endhint %}
 
-***
-
 Añade `testHashTable.cpp` y `Makefile` a git (y `HashTable.h` también, si has hecho cambios):
 
 ```bash
@@ -236,8 +232,6 @@ y confirma los cambios con un mensaje informativo:
 ```bash
 git commit -m "Actualizado Makefile y añadido código de test de la clase HashTable"
 ```
-
-***
 
 Este parece ser un buen momento para sincronizar tu repositorio local con tu repositorio remoto de GitHub, para enviarle todos los cambios (_commits_) realizados localmente:
 
