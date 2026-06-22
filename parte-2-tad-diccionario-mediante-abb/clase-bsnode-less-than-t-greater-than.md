@@ -25,6 +25,16 @@ La representación de los nodos de un Árbol Binario de Búsqueda es una estruct
 
 <figure><img src="../.gitbook/assets/https___content.gitbook.com_content_UNn7pHmS3yDRrKDzSzAC_blobs_yG2JtspYkPtmI49676JT_Captura%20de%20pantalla%20de%202023-12-12%2022-39-52.png" alt="" width="375"><figcaption></figcaption></figure>
 
+```mermaid
+classDiagram
+    class BSNode~T~ {
+        +T elem
+        +BSNode~T~* left
+        +BSNode~T~* right
+        +BSNode(T elem, BSNode~T~* left, BSNode~T~* right)
+    }
+```
+
 ## Atributos
 
 <table><thead><tr><th width="149">Visibilidad</th><th width="206">Atributo</th><th>Descripción</th></tr></thead><tbody><tr><td><code>public</code></td><td><code>T elem</code></td><td>El elemento de tipo <code>T</code> almacenado en el nodo.</td></tr><tr><td><code>public</code></td><td><code>BSNode&#x3C;T>* left</code></td><td>Puntero al nodo sucesor izquierdo.</td></tr><tr><td><code>public</code></td><td><code>BSNode&#x3C;T>* right</code></td><td>Puntero al nodo sucesor derecho.</td></tr></tbody></table>

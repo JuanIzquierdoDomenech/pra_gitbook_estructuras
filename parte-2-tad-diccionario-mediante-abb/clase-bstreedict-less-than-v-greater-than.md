@@ -56,7 +56,7 @@ Haz un commit si lo ves necesario.
 
 <mark style="background-color:orange;">**Además de implementar los métodos públicos abstractos heredados de la interfaz**</mark> [<mark style="background-color:orange;">**`Dict<V>`**</mark>](../parte-1-tad-diccionario-con-t.-hash/interfaz-dict-less-than-v-greater-than.md), deberá definir e implementar los siguientes métodos propios:
 
-<table><thead><tr><th width="127">Visibilidad</th><th width="286">Método</th><th>Descripción</th></tr></thead><tbody><tr><td><code>public</code></td><td><code>BSTreeDict()</code></td><td>Constructor. Crea un ABB vacío con memoria dinámica.</td></tr><tr><td><code>public</code></td><td><code>~BSTreeDict()</code></td><td>Método destructor. Se encargará de liberar la memoria dinámica ocupada por el ABB <code>tree</code>.</td></tr><tr><td><code>public</code></td><td><p><code>friend std::ostream&#x26; operator&#x3C;&#x3C;(</code></p><p>  <code>std::ostream &#x26;out,</code> </p><p>  <code>const BSTreeDict&#x3C;V> &#x26;bs)</code></p></td><td>Sobrecarga global del operador <code>&#x3C;&#x3C;</code> para imprimir el contenido del Diccionario por pantalla. </td></tr><tr><td><code>public</code></td><td><code>V operator[](std::string key)</code></td><td>Sobrecarga del operador<code>[]</code>. Actúa como interfaz al método de interfaz heredado <code>search(std::string key)</code>.</td></tr></tbody></table>
+<table><thead><tr><th width="127">Visibilidad</th><th width="304.359375">Método</th><th>Descripción</th></tr></thead><tbody><tr><td><code>public</code></td><td><code>BSTreeDict()</code></td><td>Constructor. Crea un ABB vacío en memoria dinámica.</td></tr><tr><td><code>public</code></td><td><code>~BSTreeDict()</code></td><td>Método destructor. Se encargará de liberar la memoria dinámica ocupada por el ABB <code>tree</code>. Este método es muy simple, pues has implementado el destructor de BSTree.</td></tr><tr><td><code>public</code></td><td><code>V operator[](std::string key)</code></td><td>Sobrecarga del operador<code>[]</code>. Actúa como interfaz al método de interfaz heredado <code>search(std::string key)</code>.</td></tr><tr><td><code>public</code></td><td><p><code>friend std::ostream&#x26; operator&#x3C;&#x3C;(</code></p><p><code>std::ostream &#x26;out,</code> </p><p><code>const BSTreeDict&#x3C;V> &#x26;bs)</code></p></td><td>Sobrecarga global del operador <code>&#x3C;&#x3C;</code> para imprimir el contenido del Diccionario por pantalla. Aprovecha que has implementado ese mismo método en <code>BSTree</code>.</td></tr></tbody></table>
 
 {% hint style="info" %}
 Recuerda que la implementación de los métodos abstractos `entries()`,`insert()`, `search()` y `remove()` heredados de [**`Dict<V>`**](../parte-1-tad-diccionario-con-t.-hash/interfaz-dict-less-than-v-greater-than.md) harán uso de los métodos correspondientes de la clase [**`BSTree<T>`**](clase-bstree-less-than-t-greater-than.md) para gestionar las entradas clave->valor dentro de un ABB. Repasa brevemente su interfaz para tener claro como gestionar de forma eficaz esta sub-estructura de datos en el contexto de un ABB.
@@ -113,7 +113,7 @@ git add BSTreeDict.h
 y confirma los cambios con un mensaje informativo:
 
 ```bash
-git commit -m "Añadida implementación de la clase BSTreeDict"
+git commit -m "Add BSTreeDict class implementation"
 ```
 
 ## Depuración de la clase BSTreeDict\<V>
@@ -192,7 +192,7 @@ git add testBSTreeDict.cpp Makefile BSTreeDict.h
 y confirma los cambios con un mensaje informativo:
 
 ```bash
-git commit -m "Actualizado Makefile y añadido código de test de la clase BSTreeDict"
+git commit -m "Update Makefile and add test code for BSTreeDict class"
 ```
 
 Este parece ser un buen momento para sincronizar tu repositorio local con tu repositorio remoto de GitHub, para enviarle todos los cambios (_commits_) realizados localmente:
