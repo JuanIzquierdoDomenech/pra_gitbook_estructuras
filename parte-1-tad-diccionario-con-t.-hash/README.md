@@ -1,3 +1,24 @@
+---
+layout:
+  width: wide
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
+  metadata:
+    visible: true
+  tags:
+    visible: true
+  actions:
+    visible: true
+---
+
 # Parte 1: TAD Diccionario con T. Hash
 
 En esta primera parte, realizaremos la implementaremos de un **Tipo Abstracto de Datos (TAD) Diccionario mediante una tabla&#x20;**_**hash**_. Este Diccionario permanente acceder a una colección de elementos mediante el uso de claves de acceso, trabajando con lo que comúnmente llamamos **pares&#x20;**_**clave→valor**_. La **clave será un tipo&#x20;**_**string**_ mientras que el valor será de tipo paramétrico, concretándose cuando se cree un objeto Diccionario.

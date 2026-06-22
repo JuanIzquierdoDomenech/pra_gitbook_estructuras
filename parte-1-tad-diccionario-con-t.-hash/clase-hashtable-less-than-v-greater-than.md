@@ -1,3 +1,24 @@
+---
+layout:
+  width: wide
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
+  metadata:
+    visible: true
+  tags:
+    visible: true
+  actions:
+    visible: true
+---
+
 # Clase HashTable\<V>
 
 Esta clase implementará la interfaz [**`Dict<V>`**](interfaz-dict-less-than-v-greater-than.md) mediante una **tabla hash con encadenamiento**. Más concretamente, la tabla hash se implementará como un array de punteros a listas de tipo **`ListLinked<T>`** (ver [Práctica 1](https://app.gitbook.com/o/uY9F7U6WRW2jZBN5gWuV/s/sfbBaRe5dlDS9ZlSiKn6/)). Para ello, tienes dos alternativas:

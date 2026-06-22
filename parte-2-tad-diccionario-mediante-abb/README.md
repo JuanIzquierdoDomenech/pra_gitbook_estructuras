@@ -1,3 +1,24 @@
+---
+layout:
+  width: wide
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
+  metadata:
+    visible: true
+  tags:
+    visible: true
+  actions:
+    visible: true
+---
+
 # Parte 2: TAD Diccionario mediante ABB
 
 En esta segunda parte, implementaremos el mismo TAD que en la [parte 1](../parte-1-tad-diccionario-con-t.-hash/), un Diccionario, pero mediante un Árbol Binario de Búsqueda (ABB). Los nodos del árbol almacenaran pares clave→valor. La clave será un tipo `std::string` mientras que el valor será de tipo paramétrico.

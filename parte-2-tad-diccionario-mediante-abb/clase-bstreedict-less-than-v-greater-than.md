@@ -1,3 +1,24 @@
+---
+layout:
+  width: wide
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
+  metadata:
+    visible: true
+  tags:
+    visible: true
+  actions:
+    visible: true
+---
+
 # Clase BSTreeDict\<V>
 
 La interfaz [**Dict\<V>**](../parte-1-tad-diccionario-con-t.-hash/interfaz-dict-less-than-v-greater-than.md)**,** que en la primera parte de esta práctica se implementó con una tabla _hash (_&#x76;er clase [**`HashTable<V>`**](../parte-1-tad-diccionario-con-t.-hash/clase-hashtable-less-than-v-greater-than.md)), puede ser implementada igualmente mediante un ABB, representado por la clase [**BSTree\<T>**](clase-bstree-less-than-t-greater-than.md), que almacene elementos clave->valor de tipo [**TableEntry\<V>**](../parte-1-tad-diccionario-con-t.-hash/clase-tableentry-less-than-v-greater-than.md).&#x20;

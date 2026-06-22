@@ -1,3 +1,24 @@
+---
+layout:
+  width: wide
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
+  metadata:
+    visible: true
+  tags:
+    visible: true
+  actions:
+    visible: true
+---
+
 # Clase BSTree\<T>
 
 Representaremos un ABB mediante la clase genérica **`BSTree<T>`** _(Binary Search Tree)_. Esta almacenará un puntero al nodo raíz del árbol, de tipo [**`BSNode<T>`**](clase-bsnode-less-than-t-greater-than.md), así como un contador del número de elementos almacenados en el árbol.

@@ -1,3 +1,24 @@
+---
+layout:
+  width: wide
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
+  metadata:
+    visible: true
+  tags:
+    visible: true
+  actions:
+    visible: true
+---
+
 # Clase TableEntry\<V>
 
 Los **pares clave→valor** se representarán mediante la clase genérica `TableEntry<V>`, con tipo `std::string` para las claves y tipo paramétrico `V` para los valores.&#x20;

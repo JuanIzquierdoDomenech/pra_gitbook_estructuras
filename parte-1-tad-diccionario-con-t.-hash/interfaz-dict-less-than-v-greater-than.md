@@ -1,3 +1,24 @@
+---
+layout:
+  width: wide
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
+  metadata:
+    visible: true
+  tags:
+    visible: true
+  actions:
+    visible: true
+---
+
 # Interfaz Dict\<V>
 
 La interfaz genérica `Dict<V>`determinará de qué manera se puede gestionar un Diccionario de pares clave→valor, donde clave será de tipo _string_ y valor de tipo `V` cualquiera. `Dict<V>` será una **clase abstracta pura y genérica** (templatizada), e incluirá los siguientes métodos **virtuales puros y genéricos**:

@@ -1,3 +1,24 @@
+---
+layout:
+  width: wide
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
+  metadata:
+    visible: true
+  tags:
+    visible: true
+  actions:
+    visible: true
+---
+
 # Clase BSNode\<T>
 
 La representación de los nodos de un Árbol Binario de Búsqueda es una estructura ternaria en la que se guarda el elemento y dos punteros, uno al sucesor (sub-árbol) izquierdo y otro al derecho. Esta estructura se implementará en una clase genérica denominada `BSNode<T>` _(Binary Search Node)_.
