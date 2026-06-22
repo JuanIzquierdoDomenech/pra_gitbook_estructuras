@@ -38,7 +38,7 @@ Desde nuestro directorio de trabajo (`PRA_2425_P3`, raíz del repositorio git), 
 vim Dict.h
 ```
 
-Declara en él la clase abstracta pura `Dict`, de acuerdo con la especificación de la tabla del apartado anterior. &#x20;
+Declara en él la clase abstracta pura (interfaz) `Dict`, de acuerdo con la especificación de la tabla del apartado anterior. &#x20;
 
 Por si en un futuro la clase fuese importada desde múltiples fuentes, **podemos envolver la definición de la clase dentro de una guarda de importación** _("include guard")_, usando las directivas del preprocesador `ifndef <VAR>` _(if-not-defined)_ y `define <VAR>`. Esto nos evitará los errores de compilación correspondientes a una importación múltiple. Aquí tienes una plantilla:
 
@@ -79,7 +79,7 @@ git add Dict.h
 y confirma los cambios con un mensaje informativo:
 
 ```bash
-git commit -m "Añadida interfaz genérica Dict"
+git commit -m "Add generic interface Dict"
 ```
 
 &#x20;Si lo crees conveniente, haz `git push` para enviar los cambios a tu repositorio remoto en GitHub.&#x20;
