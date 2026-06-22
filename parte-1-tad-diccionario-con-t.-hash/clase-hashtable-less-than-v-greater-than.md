@@ -39,7 +39,7 @@ Si por alguna razón vuestra clase **`ListLinked<T>`** no se ha implementado cor
 
 <mark style="background-color:orange;">**Además de implementar los métodos públicos heredados de la interfaz**</mark> [<mark style="background-color:orange;">**`Dict<V>`**</mark>](interfaz-dict-less-than-v-greater-than.md), deberá definir e implementar los siguientes métodos propios:
 
-<table><thead><tr><th width="127">Visibilidad</th><th width="286">Método</th><th>Descripción</th></tr></thead><tbody><tr><td><code>private</code></td><td><code>int h(std::string key)</code></td><td>Función <em>hash</em> que devuelve la posición (cubeta) en la tabla <em>hash</em> de <strong>key</strong>.  Se calculará como el resto de la divisón entre la suma de los valores ASCII numéricos de los caracteres de la clave y el tamaño de la tabla <em>hash</em> (ver nota más abajo).</td></tr><tr><td><code>public</code></td><td><code>HashTable(int size)</code></td><td>Método constructor. Reservará memoria dinámica para crear una tabla <code>table</code> de tamaño <strong>size</strong>, e inicializará los atributos <code>n</code> y <code>max</code> de la clase.</td></tr><tr><td><code>public</code></td><td><code>~HashTable()</code></td><td>Método destructor. Se encargará de liberar la memoria dinámica reservada al crear la tabla <code>table</code>.</td></tr><tr><td><code>public</code></td><td><code>int capacity()</code></td><td>Devuelve el número total de cubetas de la tabla.</td></tr><tr><td><code>public</code></td><td><code>friend std::ostream&#x26; operator&#x3C;&#x3C;(std::ostream &#x26;out, const HashTable&#x3C;V> &#x26;th)</code></td><td>Sobrecarga global del operador <code>&#x3C;&#x3C;</code> para imprimir el contenido de la tabla <em>hash</em> por pantalla. Recuerda incluir la cabecera <code>&#x3C;ostream></code> en el <code>.h</code>.</td></tr><tr><td><code>public</code></td><td><code>V operator[](std::string key)</code></td><td>Sobrecarga del operador <code>[]</code>. Devuelve el valor correspondiente a <strong>key</strong>. Si no existe, lanza la excepción <strong><code>std::runtime_error</code></strong>.</td></tr></tbody></table>
+<table><thead><tr><th width="127">Visibilidad</th><th width="306.421875">Método</th><th>Descripción</th></tr></thead><tbody><tr><td><code>public</code></td><td><code>HashTable(int size)</code></td><td>Método constructor. Reservará memoria dinámica para crear una tabla <code>table</code> de tamaño <strong><code>size</code></strong>, e inicializará los atributos <code>n</code> a 0 y <code>max</code> a <code>size</code>.</td></tr><tr><td><code>public</code></td><td><code>~HashTable()</code></td><td>Método destructor. Se encargará de liberar la memoria dinámica reservada al crear la tabla <code>table</code>.</td></tr><tr><td><code>public</code></td><td><code>int capacity()</code></td><td>Devuelve el número total de cubetas de la tabla.</td></tr><tr><td><code>public</code></td><td><code>V operator[](std::string key)</code></td><td>Sobrecarga del operador <code>[]</code>. Devuelve el valor correspondiente a <strong>key</strong>. Si no existe, lanza la excepción <strong><code>std::runtime_error</code></strong>.</td></tr><tr><td><code>public</code></td><td><p><code>friend std::ostream&#x26; operator&#x3C;&#x3C;(</code></p><p><code>std::ostream &#x26;out,</code> </p><p><code>const HashTable&#x3C;V> &#x26;th)</code></p></td><td>Sobrecarga global del operador <code>&#x3C;&#x3C;</code> para imprimir el contenido de la tabla <em>hash</em> por pantalla (número de entradas, capacidad y, cubeta a cubeta, sus elementos).</td></tr><tr><td><code>private</code></td><td><code>int h(std::string key)</code></td><td>Función <em>hash</em> que devuelve la posición (cubeta) en la tabla <em>hash</em> de <strong>key</strong>.  Se calculará como el resto de la división entre la suma de los valores ASCII numéricos de los caracteres de la clave y el tamaño de la tabla <em>hash</em>. <span class="math">h(\text{key}) = \left( \sum_{i=0}^{n-1} \text{ASCII}(c_i) \right) \bmod \text{max}</span></td></tr></tbody></table>
 
 {% hint style="success" %}
 El método `at(i)` de `std::string` permite obtener el carácter situado en la posición `i` de un `string`, y `int(c)` permite obtener el valor ASCII numérico del carácter `c`.
@@ -103,12 +103,12 @@ git add TablaHash.h
 y confirma los cambios con un mensaje informativo:
 
 ```bash
-git commit -m "Añadida implementación de la clase HashTable"
+git commit -m "Add HashTable class implementation"
 ```
 
 ## Depuración de la clase HashTable\<V>
 
-&#x20;Guarda en nuestro directorio de trabajo (`PRA_2425_P3`) el siguiente fichero para test:
+&#x20;Guarda en nuestro directorio de trabajo (`PRA_2627_P2`) el siguiente fichero para test:
 
 {% file src="../.gitbook/assets/testHashTable.cpp" %}
 
@@ -252,10 +252,10 @@ git add testHashTable.cpp Makefile HashTable.h
 y confirma los cambios con un mensaje informativo:
 
 ```bash
-git commit -m "Actualizado Makefile y añadido código de test de la clase HashTable"
+git commit -m "Update Makefile and add HashTable test code"
 ```
 
-Este parece ser un buen momento para sincronizar tu repositorio local con tu repositorio remoto de GitHub, para enviarle todos los cambios (_commits_) realizados localmente:
+Este es un buen momento para sincronizar tu repositorio local con tu repositorio remoto de GitHub, para enviarle todos los cambios (_commits_) realizados localmente:
 
 ```bash
 git push
