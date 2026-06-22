@@ -27,7 +27,33 @@ Representaremos un ABB mediante la clase genérica **`BSTree<T>`** _(Binary Sear
 
 Además, ofrecerá las operaciones básicas de un árbol (insertar, buscar y eliminar) vistas en teoría, más un conjunto de funciones auxiliares necesarias. &#x20;
 
-La implementación deberá ocultar la estructura interna del árbol, y en particular, el tipo de datos **`BSNode<T>`**. Esto es, el usuario de **`BSTree<T>`** no debe tener acceso en ningún momento a los nodos del árbol.&#x20;
+La implementación deberá ocultar la estructura interna del árbol, y en particular, el tipo de datos **`BSNode<T>`**. Esto es, el usuario de **`BSTree<T>`** no debe tener acceso en ningún momento a los nodos del árbol.
+
+```mermaid
+classDiagram
+    class BSTree~T~ {
+        -int nelem
+        -BSNode~T~* root
+        -BSNode~T~* search(BSNode~T~* n, T e)
+        -BSNode~T~* insert(BSNode~T~* n, T e)
+        -void print_inorder(ostream out, BSNode~T~* n)
+        -T max(BSNode~T~* n)
+        -BSNode~T~* remove_max(BSNode~T~* n)
+        -BSNode~T~* remove(BSNode~T~* n, T e)
+        -void delete_cascade(BSNode~T~* n)
+        +BSTree()
+        +~BSTree()
+        +int size()
+        +T search(T e)
+        +T operator[](T e)
+        +void insert(T e)
+        +void remove(T e)
+    }
+    class BSNode~T~ {
+        +T elem
+    }
+    BSTree~T~ *-- BSNode~T~ : root
+```
 
 ## Atributos
 
