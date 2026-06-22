@@ -172,7 +172,7 @@ git add testTableEntry.cpp Makefile TableEntry.h
 y confirma los cambios con un mensaje informativo:
 
 ```bash
-git commit -m "Añadido Makefile y código de test de la clase TableEntry"
+git commit -m "Add Makefile and test code for TableEntry class"
 ```
 
 Este parece ser un buen momento para sincronizar tu repositorio local con tu repositorio remoto de GitHub, para enviarle todos los cambios (_commits_) realizados localmente:
