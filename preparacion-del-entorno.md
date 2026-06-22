@@ -30,7 +30,7 @@ Entra a tu cuenta de GitHub y **crea un repositorio público, vacío** (sin inic
 Abre una terminal _Bash_ de Linux, sitúate en el directorio donde quieras mantener organizados tus repositorios git de la asignatura (p.e. `/home/TUUSUARIO/UPV/PRA/Lab`), y **clona el repositorio**:
 
 ```bash
-git clone URL  # Reemplaza URL por lo que corresponda.
+git clone {URL}  # Reemplaza {URL} por lo que corresponda.
 ```
 
 Este comando clonará tu repositorio de GitHub en un directorio llamado `PRA_2627_P2`, que, como podrás comprobar, está vacío. Sitúate en ese directorio para "entrar" dentro de nuestro repositorio git local:
