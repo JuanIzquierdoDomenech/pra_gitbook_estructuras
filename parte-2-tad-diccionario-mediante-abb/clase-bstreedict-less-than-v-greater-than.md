@@ -27,13 +27,47 @@ En otras palabras, construiremos un objeto [**`BSTree<T>`**](clase-bstree-less-t
 
 Las operaciones de la interfaz [**`Dict<V>`**](../parte-1-tad-diccionario-con-t.-hash/interfaz-dict-less-than-v-greater-than.md) serán delegadas a las operaciones correspondientes de la clase [**`BSTree<T>`**](clase-bstree-less-than-t-greater-than.md). Es por ello que la clase **`BSTreeDict<V>`** se puede considerar una especie de _**proxy**_ entre la interfaz [**`Dict<V>`**](../parte-1-tad-diccionario-con-t.-hash/interfaz-dict-less-than-v-greater-than.md) y la clase [**`BSTree<T>`**](clase-bstree-less-than-t-greater-than.md) que soportará la gestión de los elementos del diccionario.
 
-{% hint style="warning" %}
-Nota importante: **deberemos modificar la clase** [**`TableEntry<V>`**](../parte-1-tad-diccionario-con-t.-hash/clase-tableentry-less-than-v-greater-than.md) para incorporar la **sobrecarga de operadores `<` y `>`**. Esto permitirá comparar el orden de los objetos de dicha clase y buscar las posiciones en el ABB de dichos elementos.
-{% endhint %}
+```mermaid
+classDiagram
+    class Dict~V~ {
+        <<interface>>
+        +void insert(string key, V value)
+        +V search(string key)
+        +V remove(string key)
+        +int entries()
+    }
+    class BSTreeDict~V~ {
+        -BSTree~T~* tree
+        +BSTreeDict()
+        +~BSTreeDict()
+        +void insert(string key, V value)
+        +V search(string key)
+        +V remove(string key)
+        +int entries()
+        +V operator[](string key)
+    }
+    class BSTree~T~ {
+        +T search(T e)
+        +void insert(T e)
+        +void remove(T e)
+        +int size()
+    }
+    class TableEntry~V~ {
+        +string key
+        +V value
+    }
+    Dict~V~ <|.. BSTreeDict~V~
+    BSTreeDict~V~ *-- BSTree~T~ : tree
+    BSTreeDict~V~ ..> TableEntry~V~
+```
 
 ***
 
 ### Modificación de la clase TableEntry\<V>
+
+{% hint style="warning" %}
+Nota importante: **deberemos modificar la clase** [**`TableEntry<V>`**](../parte-1-tad-diccionario-con-t.-hash/clase-tableentry-less-than-v-greater-than.md) para incorporar la **sobrecarga de operadores `<` y `>`**. Esto permitirá comparar el orden de los objetos de dicha clase y buscar las posiciones en el ABB de dichos elementos.
+{% endhint %}
 
 Modifica la clase [**`TableEntry<V>`**](../parte-1-tad-diccionario-con-t.-hash/clase-tableentry-less-than-v-greater-than.md) para incorporar la **sobrecarga de operadores `<` y `>`**. Esto permitirá comparar el orden de los objetos de dicha clase y buscar las posiciones en el ABB de dichos elementos:
 
