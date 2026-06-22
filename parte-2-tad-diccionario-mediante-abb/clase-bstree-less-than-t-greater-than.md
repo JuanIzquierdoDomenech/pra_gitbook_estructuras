@@ -43,11 +43,11 @@ Se recomienda implementar los métodos en el orden que aparecen a continuación.
 
 ### Creación y tamaño
 
-<table><thead><tr><th width="127">Visibilidad</th><th width="239.703125">Método</th><th>Descripción</th></tr></thead><tbody><tr><td><code>public</code></td><td><code>BSTree()</code></td><td>Método constructor. Crea un ABB vacío.</td></tr><tr><td><code>public</code></td><td><code>int size() const</code></td><td>Devuelve el número de elementos <code>nelem</code> del ABB.</td></tr></tbody></table>
+<table><thead><tr><th width="127">Visibilidad</th><th width="239.703125">Método</th><th>Descripción</th></tr></thead><tbody><tr><td><code>public</code></td><td><code>BSTree()</code></td><td>Método constructor. Crea un ABB vacío, donde <code>root</code> apunta a <code>nullptr</code> y el número de elementos <code>nelem</code> será 0.</td></tr><tr><td><code>public</code></td><td><code>int size() const</code></td><td>Devuelve el número de elementos <code>nelem</code> del ABB.</td></tr></tbody></table>
 
 ### Búsqueda de elementos
 
-<table><thead><tr><th width="127">Visibilidad</th><th width="325">Método</th><th>Descripción</th></tr></thead><tbody><tr><td><code>public</code></td><td><code>T search(T e) const</code></td><td>Busca y devuelve el elemento  <code>e</code> de tipo <code>T</code> en el ABB.  Actúa como <strong>método lanzadera</strong> del método privado recursivo <code>search(BSNode&#x3C;T>* n, T e)</code>.  Notar que deberá devolver el elemento contenido por el nodo devuelto por el método privado.</td></tr><tr><td><code>private</code></td><td><p><code>BSNode&#x3C;T>* search(</code></p><p><code>BSNode&#x3C;T>* n,</code></p><p><code>T e) const</code></p></td><td><p>Método recursivo para la búsqueda elementos en el ABB. Busca y devuelve el elemento <code>e</code> de tipo <code>T</code> si se encuentra en el (sub-)árbol cuya raíz es <code>n</code>, de lo contrario lanza una <code>std::runtime_error</code>. </p><p><strong>Ver pseudocódigo abajo</strong>. </p></td></tr><tr><td><code>public</code></td><td><code>T operator[](T e) const</code></td><td>Sobrecarga del operador<code>[]</code>. Actúa como interfaz al método <code>search(T e)</code>.</td></tr></tbody></table>
+<table><thead><tr><th width="127">Visibilidad</th><th width="257.88671875">Método</th><th>Descripción</th></tr></thead><tbody><tr><td><code>public</code></td><td><code>T search(T e) const</code></td><td>Busca y devuelve el elemento <code>e</code> de tipo <code>T</code> en el ABB.  Actúa como <strong>método lanzadera</strong> del método privado recursivo <code>search(BSNode&#x3C;T>* n, T e)</code>.  Notar que deberá devolver el elemento contenido por el nodo devuelto por el método privado.</td></tr><tr><td><code>private</code></td><td><p><code>BSNode&#x3C;T>* search(</code></p><p><code>BSNode&#x3C;T>* n,</code></p><p><code>T e) const</code></p></td><td><p>Método recursivo para la búsqueda elementos en el ABB. Busca y devuelve el elemento <code>e</code> de tipo <code>T</code> si se encuentra en el (sub-)árbol cuya raíz es <code>n</code>, de lo contrario lanza una <code>std::runtime_error</code>. </p><p><strong>Ver pseudocódigo abajo</strong>. </p></td></tr><tr><td><code>public</code></td><td><code>T operator[](T e) const</code></td><td>Sobrecarga del operador<code>[]</code>. Actúa como interfaz al método <code>search(T e)</code>.</td></tr></tbody></table>
 
 {% hint style="info" %}
 A modo de referencia, se muestra el pseudocódigo de búsqueda visto en teoría:
@@ -119,11 +119,9 @@ A modo de referencia, se proporciona el pseudocódigo de recorrido _inorden_ vis
 ```clike
 function inorden(n, P):
     if n != null then
-        inorden(n.first_descendant(), P)
+        inorden(n.izq, P)
         P(n)
-        foreach d in sorted(n.remaining_descendants()) do
-            inorden(d, P)
-        done
+        inorden(n.der, P)
     end
 ```
 
@@ -185,7 +183,7 @@ function remove_max(n):
 
 ### Destrucción
 
-<table><thead><tr><th width="127">Visibilidad</th><th width="325">Método</th><th>Descripción</th></tr></thead><tbody><tr><td><code>public</code></td><td><code>~BSTree()</code></td><td>Método destructor. Delega en el método privado recursivo <code>delete_cascade()</code>.</td></tr><tr><td><code>private</code></td><td><code>void delete_cascade(BSNode&#x3C;T>* n)</code></td><td>Método recursivo para liberación de la memoria dinámica ocupada por los objetos de tipo <code>BSNode&#x3C;T></code> que conforman el (sub-)árbol cuya raíz es <code>n</code>.</td></tr></tbody></table>
+<table><thead><tr><th width="127">Visibilidad</th><th width="313.8359375">Método</th><th>Descripción</th></tr></thead><tbody><tr><td><code>public</code></td><td><code>~BSTree()</code></td><td>Método destructor. Delega en el método privado recursivo <code>delete_cascade()</code>.</td></tr><tr><td><code>private</code></td><td><code>void delete_cascade(BSNode&#x3C;T>* n)</code></td><td>Método recursivo para liberación de la memoria dinámica ocupada por los objetos de tipo <code>BSNode&#x3C;T></code> que conforman el (sub-)árbol cuya raíz es <code>n</code>.</td></tr></tbody></table>
 
 ## Declaración y definición de la clase BSTree\<T>
 
@@ -238,7 +236,7 @@ git add BSTree.h
 y confirma los cambios con un mensaje informativo:
 
 ```bash
-git commit -m "Añadida implementación de la clase BSTree"
+git commit -m "Add BSTree class implementation"
 ```
 
 ## Depuración de la clase BSTree\<T>
@@ -407,7 +405,7 @@ git add testBSTree.cpp Makefile BSTree.h
 y confirma los cambios con un mensaje informativo:
 
 ```bash
-git commit -m "Añadido Makefile y código de test de la clase BSTree"
+git commit -m "Update Makefile and test code for BSTree class"
 ```
 
 Este parece ser un buen momento para sincronizar tu repositorio local con tu repositorio remoto de GitHub, para enviarle todos los cambios (_commits_) realizados localmente:
