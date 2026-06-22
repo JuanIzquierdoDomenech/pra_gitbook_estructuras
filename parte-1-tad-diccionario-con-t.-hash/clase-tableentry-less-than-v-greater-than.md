@@ -119,11 +119,11 @@ bin/testTableEntry: testTableEntry.cpp TableEntry.h
         g++ -o bin/testTableEntry testTableEntry.cpp
 
 clean:
-        rm -rf *.o *.gch bin
+        rm -rf *.o *.gch *.pch bin
 ```
 
 {% hint style="warning" %}
-Recuerda: **debes usar tabulador** (tecla `TAB`) para indentar los comandos de la regla.
+Recuerda: **se usa el tabulador** (tecla `TAB`) para indentar los comandos de la regla.
 {% endhint %}
 
 A continuación, ejecuta la regla `bin/testHashTable`:
