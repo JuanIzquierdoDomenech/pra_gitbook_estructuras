@@ -27,13 +27,13 @@ La representación de los nodos de un Árbol Binario de Búsqueda es una estruct
 
 ## Atributos
 
-<table><thead><tr><th width="149">Visibilidad</th><th width="206">Atributo</th><th>Descripción</th></tr></thead><tbody><tr><td><code>public</code></td><td><code>T elem</code></td><td>El elemento de tipo T almacenado en el nodo.</td></tr><tr><td><code>public</code></td><td><code>BSNode&#x3C;T>* left</code></td><td>Puntero al nodo sucesor izquierdo.</td></tr><tr><td><code>public</code></td><td><code>BSNode&#x3C;T>* right</code></td><td>Puntero al nodo sucesor derecho.</td></tr></tbody></table>
+<table><thead><tr><th width="149">Visibilidad</th><th width="206">Atributo</th><th>Descripción</th></tr></thead><tbody><tr><td><code>public</code></td><td><code>T elem</code></td><td>El elemento de tipo <code>T</code> almacenado en el nodo.</td></tr><tr><td><code>public</code></td><td><code>BSNode&#x3C;T>* left</code></td><td>Puntero al nodo sucesor izquierdo.</td></tr><tr><td><code>public</code></td><td><code>BSNode&#x3C;T>* right</code></td><td>Puntero al nodo sucesor derecho.</td></tr></tbody></table>
 
 ## Métodos
 
-<table><thead><tr><th width="131.99609375">Visibilidad</th><th width="295">Método</th><th>Descripción</th></tr></thead><tbody><tr><td><code>public</code></td><td><code>BSNode(T elem, BSNode&#x3C;T>* left=nullptr, BSNode&#x3C;T>* right=nullptr)</code></td><td>Método constructor que crea un BSNode con el elemento <code>elem</code> y los punteros a los nodos sucesores <code>left</code> y  <code>right</code> proporcionados (nulos por defecto). </td></tr><tr><td><code>public</code></td><td><code>friend std::ostream&#x26; operator&#x3C;&#x3C;(std::ostream &#x26;out, const BSNode&#x3C;T> &#x26;bsn)</code></td><td>Sobrecarga global del operador <code>&#x3C;&#x3C;</code> para imprimir el nodo por pantalla. Por simplicidad, puedes limitarte a imprimir el atributo <code>elem</code>. Recuerda incluir la cabecera <code>&#x3C;ostream></code> en el <code>.h</code>.</td></tr></tbody></table>
+<table><thead><tr><th width="134.6015625">Visibilidad</th><th width="311.046875">Método</th><th>Descripción</th></tr></thead><tbody><tr><td><code>public</code></td><td><p><code>BSNode(</code></p><p><code>T elem,</code> </p><p><code>BSNode&#x3C;T>* left=nullptr,</code> </p><p><code>BSNode&#x3C;T>* right=nullptr)</code></p></td><td>Método constructor que crea un BSNode con el elemento <code>elem</code> y los punteros a los nodos sucesores <code>left</code> y  <code>right</code> proporcionados (nulos por defecto). </td></tr><tr><td><code>public</code></td><td><p><code>friend std::ostream&#x26; operator&#x3C;&#x3C;(</code></p><p><code>std::ostream &#x26;out,</code> </p><p><code>const BSNode&#x3C;T> &#x26;bsn)</code></p></td><td>Sobrecarga global del operador <code>&#x3C;&#x3C;</code> para imprimir el nodo por pantalla. Por simplicidad, puedes limitarte a imprimir el atributo <code>elem</code>. Recuerda incluir la cabecera <code>&#x3C;ostream></code> en el <code>.h</code>.</td></tr></tbody></table>
 
-## Declaración e implementación de la clase BSNode\<T>
+## Declaración y definición de la clase BSNode\<T>
 
 {% hint style="danger" %}
 **La definición e implementación de clases genéricas/templatizadas se debe realizar en un único fichero de cabeceras (.h)**, para que el compilador pueda generar código específico derivado de los _templates_ (más info [aquí](https://isocpp.org/wiki/faq/templates#templates-defn-vs-decl)).
@@ -78,7 +78,7 @@ git add BSNode.h
 y confirma los cambios con un mensaje informativo:
 
 ```bash
-git commit -m "Añadida implementación de la clase BSNode"
+git commit -m "Add BSNode class implementation"
 ```
 
 Si lo crees conveniente, haz `git push` para enviar los cambios a tu repositorio remoto en GitHub.&#x20;
