@@ -23,7 +23,8 @@ layout:
 
 Esta clase implementará la interfaz [**`Dict<V>`**](interfaz-dict-less-than-v-greater-than.md) mediante una **tabla hash con encadenamiento**. Más concretamente, la tabla hash se implementará como un array de punteros a listas de tipo **`ListLinked<T>`** (ver [Práctica 1](https://app.gitbook.com/o/uY9F7U6WRW2jZBN5gWuV/s/sfbBaRe5dlDS9ZlSiKn6/)). Para ello, tienes dos alternativas:
 
-1. <mark style="background-color:green;">**(Preferible)**</mark> Hacer el `include` correspondiente hacia la ruta donde esté vuestro fichero `ListLinked.h`, p.e. **`#include "../PRA_2627_P1/ListLinked.h"`** (modificar de manera acorde).
+1. <mark style="background-color:green;">**(Preferible)**</mark> Hacer el `include` correspondiente hacia la ruta donde esté vuestro fichero `ListLinked.h`,&#x20;
+   1. p.ej., **`#include "../PRA_2627_P1/ListLinked.h"`** (modificar de manera acorde).
 2. <mark style="background-color:red;">**(Desaconsejable)**</mark> Copiar los ficheros `Node.h`, `List.h` y `ListLinked.h` a la ubicación de la Práctica 2 para que esté todo siempre disponible, y simplemente hacer **`#include "ListLinked.h"`**.
 
 {% hint style="info" %}
@@ -32,7 +33,7 @@ Si por alguna razón vuestra clase **`ListLinked<T>`** no se ha implementado cor
 
 ### Atributos
 
-<table><thead><tr><th width="149">Visibilidad</th><th width="290">Atributo</th><th>Descripción</th></tr></thead><tbody><tr><td><code>private</code></td><td><code>int n</code></td><td>Número de elementos almacenados actualmente en la tabla hash.</td></tr><tr><td><code>private</code></td><td><code>int max</code></td><td>Tamaño de la tabla hash (número total de cubetas).</td></tr><tr><td><code>private</code></td><td><code>ListLinked&#x3C;TableEntry&#x3C;V>>* table</code></td><td>Tabla de cubetas, representada por un array de punteros a listas enlazadas (tipo <strong><code>ListLinked&#x3C;T></code></strong>) que almacenan pares clave→valor (tipo <a href="clase-tableentry-less-than-v-greater-than.md"><strong><code>TableEntry&#x3C;V></code></strong></a>).</td></tr></tbody></table>
+<table><thead><tr><th width="120.296875">Visibilidad</th><th width="314.05859375">Atributo</th><th>Descripción</th></tr></thead><tbody><tr><td><code>private</code></td><td><code>int n</code></td><td>Número de elementos almacenados actualmente en la tabla hash.</td></tr><tr><td><code>private</code></td><td><code>int max</code></td><td>Tamaño de la tabla hash (número total de cubetas).</td></tr><tr><td><code>private</code></td><td><code>ListLinked&#x3C;TableEntry&#x3C;V>>* table</code></td><td>Tabla de cubetas, representada por un array de punteros a listas enlazadas (tipo <strong><code>ListLinked&#x3C;T></code></strong>) que almacenan pares clave→valor (tipo <a href="clase-tableentry-less-than-v-greater-than.md"><strong><code>TableEntry&#x3C;V></code></strong></a>).</td></tr></tbody></table>
 
 ### **Métodos**
 
