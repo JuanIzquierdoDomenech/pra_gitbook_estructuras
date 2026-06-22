@@ -23,7 +23,7 @@ layout:
 
 ## Crea un repositorio remoto en GitHub&#x20;
 
-Entra a tu cuenta de GitHub y **crea un repositorio público, vacío** (sin inicializar), con el siguiente nombre: `PRA_2627_P1`. Copia la URL que se muestra tras la confirmación.&#x20;
+Entra a tu cuenta de GitHub y **crea un repositorio público, vacío** (sin inicializar), con el siguiente nombre: `PRA_2627_P2`. Copia la URL que se muestra tras la confirmación.&#x20;
 
 ## Clona el repositorio en tu equipo
 
