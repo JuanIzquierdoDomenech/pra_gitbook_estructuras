@@ -31,6 +31,23 @@ Las operaciones de la interfaz [**`Dict<V>`**](../parte-1-tad-diccionario-con-t.
 Nota importante: **deberemos modificar la clase** [**`TableEntry<V>`**](../parte-1-tad-diccionario-con-t.-hash/clase-tableentry-less-than-v-greater-than.md) para incorporar la **sobrecarga de operadores `<` y `>`**. Esto permitirá comparar el orden de los objetos de dicha clase y buscar las posiciones en el ABB de dichos elementos.
 {% endhint %}
 
+***
+
+### Modificación de la clase TableEntry\<V>
+
+Modifica la clase [**`TableEntry<V>`**](../parte-1-tad-diccionario-con-t.-hash/clase-tableentry-less-than-v-greater-than.md) para incorporar la **sobrecarga de operadores `<` y `>`**. Esto permitirá comparar el orden de los objetos de dicha clase y buscar las posiciones en el ABB de dichos elementos:
+
+```cpp
+friend bool operator<(const TableEntry<V> &te1, const TableEntry<V> &te2);
+friend bool operator>(const TableEntry<V> &te1, const TableEntry<V> &te2);
+```
+
+Notad que la comparación `<` y `>` de objetos [**`TableEntry<V>`**](../parte-1-tad-diccionario-con-t.-hash/clase-tableentry-less-than-v-greater-than.md) se realizará por clave. Las claves son de tipo `std::string`, el cual ya implementa los operadores `<` y `>` aplicando un orden lexicográfico (el mismo que usan los diccionarios lingüísticos).
+
+Haz un commit si lo ves necesario.
+
+***
+
 ## Atributos
 
 <table><thead><tr><th width="149">Visibilidad</th><th width="290">Atributo</th><th>Descripción</th></tr></thead><tbody><tr><td><code>private</code></td><td><code>BSTree&#x3C;TableEntry&#x3C;V>>* tree</code> </td><td>ABB con elementos de tipo <code>TableEntry&#x3C;V></code> para gestionar los elementos de un diccionario.</td></tr></tbody></table>
@@ -98,17 +115,6 @@ y confirma los cambios con un mensaje informativo:
 ```bash
 git commit -m "Añadida implementación de la clase BSTreeDict"
 ```
-
-## Modificación de la clase TableEntry\<V>
-
-Modifica la clase [**`TableEntry<V>`**](../parte-1-tad-diccionario-con-t.-hash/clase-tableentry-less-than-v-greater-than.md) para incorporar la **sobrecarga de operadores `<` y `>`**. Esto permitirá comparar el orden de los objetos de dicha clase y buscar las posiciones en el ABB de dichos elementos:
-
-```cpp
-friend bool operator<(const TableEntry<V> &te1, const TableEntry<V> &te2);
-friend bool operator>(const TableEntry<V> &te1, const TableEntry<V> &te2);
-```
-
-Notad que la comparación `<` y `>` de objetos [**`TableEntry<V>`**](../parte-1-tad-diccionario-con-t.-hash/clase-tableentry-less-than-v-greater-than.md) se realizará por clave. Las claves son de tipo `std::string`, el cual ya implementa los operadores `<` y `>` aplicando un orden lexicográfico (el mismo que usan los diccionarios lingüísticos).&#x20;
 
 ## Depuración de la clase BSTreeDict\<V>
 
