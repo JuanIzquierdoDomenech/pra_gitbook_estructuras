@@ -23,7 +23,7 @@ layout:
 
 <figure><img src=".gitbook/assets/logos.png" alt=""><figcaption></figcaption></figure>
 
-En la Práctica 3 trabajaremos los **conceptos y técnicas de estructuras de datos "Tablas Hash"** y **"Árboles Binarios de Búsqueda"** que hemos aprendido en el bloque 2 de teoría. La práctica se divide en dos partes:
+En la Práctica 2 trabajaremos los **conceptos y técnicas de estructuras de datos "Tablas Hash"** y **"Árboles Binarios de Búsqueda"** que hemos visto en teoría. La práctica se divide en dos partes:
 
 * [**Parte 1: TAD Diccionario mediante Tablas Hash**](parte-1-tad-diccionario-con-t.-hash/).
 * [**Parte 2: TAD Diccionario con Árboles Binarios de Búsqueda**](parte-2-tad-diccionario-mediante-abb/)**.**
